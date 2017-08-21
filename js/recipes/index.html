@@ -1,13 +1,14 @@
+<h3> <a data-ui-sref="recipesNew"> Create New Recipe</a> </h3>
 <h1> THESE ARE ALL RECIPES <h1>
+<div class='title'>
+  <img class='img_title' src="" alt="">
+</div>
 
 
 
-<p> <a data-ui-sref="recipesNew"> Create New Recipe</a> </p>
+<div class ='recipes' data-ng-repeat = "recipe in vm.recipes">
 
-<div data-ng-repeat = "recipe in vm.recipes">
+<img class='image' src= "{{recipe.photo_url}}" >
+<p class='recipe'> <a class='link' data-ui-sref="recipesShow({id: recipe.id})">{{ recipe.name }}</a> </p>
 
-<p> <a data-ui-sref="recipesShow({id: recipe.id})">{{ recipe.name }}</a> </p>
-
-
-<img src= "{{recipe.photo_url}}" >
 </div>
