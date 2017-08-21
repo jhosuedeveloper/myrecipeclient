@@ -1,7 +1,13 @@
 <h1> THESE ARE ALL RECIPES <h1>
 
 
+
+<p> <a data-ui-sref="recipesNew"> Create New Recipe</a> </p>
+
 <div data-ng-repeat = "recipe in vm.recipes">
+
 <p> <a data-ui-sref="recipesShow({id: recipe.id})">{{ recipe.name }}</a> </p>
 
+
+<img src= "{{recipe.photo_url}}" >
 </div>
