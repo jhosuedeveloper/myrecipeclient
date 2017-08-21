@@ -5,7 +5,14 @@ angular
   RecipesIndexControllerFunction
 ])
 
-
 function RecipesIndexControllerFunction(RecipesFactory){
-  this.recipes = RecipesFactory.query()
+  this.recipes = RecipesFactory.query({
+    search: 'chicken'
+  })
+
+  this.search = function (q) {
+    this.recipes = RecipeFactory.query({
+      search: q
+    })
+  }
 }

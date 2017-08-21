@@ -1,10 +1,16 @@
 <h3> <a data-ui-sref="recipesNew"> Create New Recipe</a> </h3>
-<h1> THESE ARE ALL RECIPES <h1>
+<h1> THESE ARE ALL RECIPES </h1>
+
+<form class="search" action="index.html" method="post">
+  <label for="search">Search</label>
+  <input type="text" data-ng-model="search">
+  <input type="submit" value="Submit" ng-click ="vm.search(search)">
+</form>
+<p>{{search}}</p>
+
 <div class='title'>
   <img class='img_title' src="" alt="">
 </div>
-
-
 
 <div class ='recipes' data-ng-repeat = "recipe in vm.recipes">
 
