@@ -1,0 +1,13 @@
+<h2>Edit {{vm.recipe.name}}</h2>
+
+<form>
+  <input placeholder="Name" data-ng-model="vm.recipe.name" />
+  <input placeholder="Description" data-ng-model="vm.recipe.description" />
+  <input placeholder="Photo URL" data-ng-model="vm.recipe.photo_url" />
+  <button type="button" data-ng-click="vm.update()"  >Update</button>
+  <button type="submit" data-ng-click="vm.destroy()" >Delete</button>
+</form>
+
+<pre>
+  {{vm.recipe | json}}
+</pre>

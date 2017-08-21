@@ -1,0 +1,12 @@
+<h2>New Recipe</h2>
+
+<form>
+  <input placeholder="Name" data-ng-model="vm.recipe.name" />
+  <input placeholder="Description" data-ng-model="vm.recipe.description" />
+  <input placeholder="Photo URL" data-ng-model="vm.recipe.photo_url" />
+  <button type="button" data-ng-click="vm.create()">Create</button>
+</form>
+
+<pre>
+  {{vm.recipe | json}}
+</pre>
