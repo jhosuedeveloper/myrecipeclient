@@ -18,14 +18,13 @@ function RecipesIndexControllerFunction(RecipesFactory){
   }
 
   this.filters = function (search) {
-    console.log(search)
     filters.push(search)
-    console.log(filters)
   }
 
   this.filterFunction = function (recipe) {
     filters.every(filter => {
       recipe.ingredients.some(ingredient => {
+        console.log(ingredient.name)
         ingredient.name.includes(filter)
       })
     })

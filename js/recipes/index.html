@@ -8,7 +8,7 @@
 </form>
 <p>{{search}}</p>
 
-<form class="filters" ng-submit="vm.filters(filter)" ng-repeat="recipe in vm.recipes | filter:filterFunction">
+<form class="filters" ng-submit="vm.filters(filter)">
   <label for="filter">Filter</label>
   <input type="text" data-ng-model="filter">
   <input type="submit" value="Submit">
@@ -19,9 +19,9 @@
   <img class='img_title' src="" alt="">
 </div>
 
-<div class ='recipes' data-ng-repeat = "recipe in vm.recipes">
+<div class ='recipes' data-ng-repeat = "recipe in vm.recipes | filter : vm.filterFunction">
 
-<img class='image' ng-src= "{{recipe.photo_url}}" >
-<p class='recipe'> <a class='link' data-ui-sref="recipesShow({id: recipe.id})">{{ recipe.name }}</a> </p>
+  <img class='image' ng-src= "{{recipe.photo_url}}" >
+  <p class='recipe'> <a class='link' data-ui-sref="recipesShow({id: recipe.id})">{{ recipe.name }}</a> </p>
 
 </div>
