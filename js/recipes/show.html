@@ -12,10 +12,10 @@
 </div>
 
 <div class="show_image">
-<img src= "{{vm.recipe.photo_url}}" >
+  <img ng-src= "{{vm.recipe.photo_url}}">
 </div>
-<div class="show_ingredients">
-  <p class='ingredients'>{{ vm.recipe.ingredients.name }}</p>
+<div class="show_ingredients" ng-repeat="ingredient in vm.recipe.ingredients">
+  <p class="ingredients">{{ingredient.name}}</p>
 </div>
 
 <div class="show_directions">
