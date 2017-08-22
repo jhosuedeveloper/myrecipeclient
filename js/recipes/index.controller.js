@@ -12,6 +12,7 @@ function RecipesIndexControllerFunction(RecipesFactory){
 
   this.search = function (search) {
     queries.push(search)
+    console.log(queries)
     this.recipes = RecipesFactory.query({
       search: queries
     })
@@ -22,10 +23,9 @@ function RecipesIndexControllerFunction(RecipesFactory){
   }
 
   this.filterFunction = function (recipe) {
-    filters.every(filter => {
-      recipe.ingredients.some(ingredient => {
-        console.log(ingredient.name)
-        ingredient.name.includes(filter)
+    return filters.every(filter => {
+      return recipe.ingredients.some(ingredient => {
+        return ingredient.name.includes(filter)
       })
     })
   }
