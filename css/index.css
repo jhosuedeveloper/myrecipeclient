@@ -30,7 +30,7 @@ body {
 .title {
   background-color: black;
   background-size: 100% 100%;
-  background-image:url(https://static.pexels.com/photos/33242/cooking-ingredient-cuisine-kitchen.jpg);
+  background-image: url("https://static.pexels.com/photos/33242/cooking-ingredient-cuisine-kitchen.jpg");
   height: 750px;
   width: 1410px;
   margin-left: 5px;

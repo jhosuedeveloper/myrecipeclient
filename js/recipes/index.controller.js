@@ -11,6 +11,7 @@ function RecipesIndexControllerFunction(RecipesFactory){
   })
 
   this.search = function (q) {
+    console.log("dfs")
     this.recipes = RecipeFactory.query({
       search: q
     })

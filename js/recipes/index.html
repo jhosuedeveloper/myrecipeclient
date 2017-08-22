@@ -3,8 +3,9 @@
 
 <form class="search" action="index.html" method="post">
   <label for="search">Search</label>
-  <input type="text" data-ng-model="search">
-  <input type="submit" value="Submit" ng-click ="vm.search(search)">
+  <input type="text" data-ng-model="search"/>
+
+  <input type="submit" value="Submit" data-ng-click ="vm.search(search)"/>
 </form>
 <p>{{search}}</p>
 
@@ -14,7 +15,7 @@
 
 <div class ='recipes' data-ng-repeat = "recipe in vm.recipes">
 
-<img class='image' src= "{{recipe.photo_url}}" >
+<img class='image' data-ng-src="{{recipe.photo_url}}" >
 <p class='recipe'> <a class='link' data-ui-sref="recipesShow({id: recipe.id})">{{ recipe.name }}</a> </p>
 
 </div>

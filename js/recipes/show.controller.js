@@ -10,5 +10,5 @@ angular
 
 
 function RecipesShowControllerFunction($stateParams, RecipesFactory){
-this.recipe = RecipesFactory.get({id: $stateParams.id})
+  this.recipe = RecipesFactory.get({id: $stateParams.id})
 }
