@@ -41,14 +41,3 @@ function RecipesIndexControllerFunction(RecipesFactory){
     })
   }
 }
-
-  // this.enterSearch = function (search, $event) {
-  //   if ($event.keyCode === 13) {
-  //     console.log($event.keyCode)
-  //     queries.push(search)
-  //     this.recipes = RecipesFactory.query({
-  //       search: queries
-  //     })
-  //     $event.preventDefault()
-  //   }
-  // }
