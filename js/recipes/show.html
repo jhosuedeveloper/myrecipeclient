@@ -1,8 +1,23 @@
+<section id='head'>
+<div class='link_menu'>
+<a id='head_link' data-ui-sref="recipesIndex" style= 'text-decoration: none';>Recipes</a>
+<a id='head_link' data-ui-sref="recipesEdit" style= 'text-decoration: none';> Update Recipe</a>
+<a id='head_link' data-ui-sref="recipesDelete" style= 'text-decoration: none'> Delete Recipe</a>
 
-<h1> {{vm.recipe.name}} </h1>
+</div>
+</section>
 
+<div class="show_name">
+  <h1> {{vm.recipe.name}} </h1>
+</div>
+
+<div class="show_image">
 <img src= "{{vm.recipe.photo_url}}" >
+</div>
+<div class="show_ingredients">
+  <p class='ingredients'>{{ vm.recipe.ingredients.name }}</p>
+</div>
 
-<br>
-
-<a href="{{ vm.recipe.directions }}"> Instructions </a>
+<div class="show_directions">
+  <p><a class='directions'href="{{ vm.recipe.directions }}"> Instructions </a></p>
+</div>
