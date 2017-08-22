@@ -14,7 +14,7 @@
 
 <div class ='recipes' data-ng-repeat = "recipe in vm.recipes">
 
-<img class='image' src= "{{recipe.photo_url}}" >
+<img class='image' ng-src= "{{recipe.photo_url}}" >
 <p class='recipe'> <a class='link' data-ui-sref="recipesShow({id: recipe.id})">{{ recipe.name }}</a> </p>
 
 </div>
