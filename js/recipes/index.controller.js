@@ -6,20 +6,31 @@ angular
   RecipesIndexControllerFunction
 ])
 
-var queries = []
-var filters = []
 function RecipesIndexControllerFunction(RecipesFactory){
+  var queries = []
+  var filters = []
+  this.inputs = []
 
   this.search = function (search) {
     queries.push(search)
-    console.log(queries)
     this.recipes = RecipesFactory.query({
       search: queries
     })
+    this.inputs.push(search)
+  }
+
+  this.removeAll = function (index) {
+    queries.splice(index, 1)
+  }
+
+  this.removeFilter = function (index) {
+    this.inputs.splice(index, 1)
+    filters.splice(index, 1)
   }
 
   this.filters = function (search) {
     filters.push(search)
+    this.inputs.push(search)
   }
 
   this.filterFunction = function (recipe) {

@@ -6,7 +6,6 @@ angular
   RecipesEditControllerFunction
 ])
 
-
 function RecipesEditControllerFunction($state, RecipesFactory){
   this.recipe = RecipesFactory.get({id: $state.params.id})
 
