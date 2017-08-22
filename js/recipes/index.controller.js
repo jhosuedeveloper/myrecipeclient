@@ -2,17 +2,24 @@ angular
 .module('myrecipe')
 .controller('RecipesIndexController',[
   'RecipesFactory',
+  '$state',
   RecipesIndexControllerFunction
 ])
 
+var queries = []
+
 function RecipesIndexControllerFunction(RecipesFactory){
   this.recipes = RecipesFactory.query({
-    search: 'chicken'
+    search: queries
   })
 
   this.search = function (q) {
-    this.recipes = RecipeFactory.query({
-      search: q
+    console.log(q)
+    queries.push(q)
+    console.log(queries)
+    // $state.go("recipesIndex", {}, {reload:"recipesIndex"})
+    this.recipes = RecipesFactory.query({
+      search: queries
     })
   }
 }
