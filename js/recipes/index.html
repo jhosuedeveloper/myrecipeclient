@@ -1,14 +1,4 @@
 
-<!-- <h3> <a data-ui-sref="recipesNew"> Create New Recipe</a> </h3>
-<h1> THESE ARE ALL RECIPES </h1> -->
-
-<!-- <form class="search" action="index.html" method="post">
-  <label for="search">Search</label>
-  <input type="text" data-ng-model="search"/>
-
-  <input type="submit" value="Submit" data-ng-click ="vm.search(search)"/>
-</form> -->
-
 <section id='head'>
   <div class='link_menu'>
     <a id='head_link' data-ui-sref="recipesNew" style= 'text-decoration: none';> Create New Recipe</a>
@@ -18,36 +8,24 @@
   <h1 id='title'> My Recipe <h1>
 </div>
 
+<form class="search" ng-submit="vm.search(search)">
+  <label for="search">Search</label>
+  <input type="text" data-ng-model="search">
+  <input type="submit" value="Submit">
+  <input type="button" value="Remove" ng-click="vm.removeAll()">
+</form>
+
+<form class="filters" ng-submit="vm.filters(filter)" ng-repeat="count in vm.inputs">
+  <label for="filter">Filter</label>
+  <input type="text" data-ng-model="filter">
+  <input type="submit" value="Submit">
+  <input type="button" value="Remove" ng-click="vm.removeFilter($index)">
+</form>
+
+
 <div class='title'>
   <img class='img_title' src="" alt="">
 </div>
-
-<!-- <div class ='recipes' data-ng-repeat = "recipe in vm.recipes">
-
-  <img class='image' data-ng-src="{{recipe.photo_url}}" >
-<p class='recipe'> <a class='link' data-ui-sref="recipesShow({id: recipe.id})">{{ recipe.name }}</a> </p> -->
-
-
-
-<div class="search">
-  <form class="search" action="index.html" method="post">
-    <label for="search">Search</label>
-    <input type="text" data-ng-model="search"/>
-
-    <input type="submit" value="Submit" data-ng-click ="vm.search(search)"/>
-  </form>
-</div>
-
-<!-- <div class="search">
-  <form action="/action_page.php">
-    <label for="">Search by Name:</label>
-    <input id='search' type="search" name="search">
-    <input type="submit">
-    <label for="">Search by Ingredients:</label>
-    <input id='search' type="search" name="search">
-    <input type="submit">
-  </form>
-</div> -->
 
 <section class='divide'> </section>
 <div class="results_title">
@@ -55,11 +33,12 @@
 </div>
 
 <section class='divide'> </section>
+<div class ='recipes' data-ng-repeat = "recipe in vm.recipes | filter : vm.filterFunction">
+
+  <img class='image' ng-src= "{{recipe.photo_url}}" >
+  <p class='recipe'> <a class='link' data-ui-sref="recipesShow({id: recipe.id})">{{ recipe.name }}</a> </p>
+</div>
 
 <div class="results">
-  <div class ='recipes' data-ng-repeat = "recipe in vm.recipes">
-    <img class='image' src= "{{recipe.photo_url}}" >
-    <p class='recipe'> <a class='link' data-ui-sref="recipesShow({id: recipe.id})">{{ recipe.name }}</a> </p>
-  </div>
 
 </div>
