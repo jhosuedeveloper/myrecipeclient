@@ -1,12 +1,19 @@
 <h3> <a data-ui-sref="recipesNew"> Create New Recipe</a> </h3>
 <h1> THESE ARE ALL RECIPES </h1>
 
-<form class="search" action="index.html" method="get">
+<form class="search" ng-submit="vm.search(search)">
   <label for="search">Search</label>
-  <input type="text" data-ng-model="search" ng-keyDown="vm.enterSearch(search, $event)">
-  <input type="button" value="Submit" ng-click ="vm.search(search)">
+  <input type="text" data-ng-model="search">
+  <input type="submit" value="Submit">
 </form>
 <p>{{search}}</p>
+
+<form class="filters" ng-submit="vm.filters(filter)" ng-repeat="recipe in vm.recipes | filter:filterFunction">
+  <label for="filter">Filter</label>
+  <input type="text" data-ng-model="filter">
+  <input type="submit" value="Submit">
+</form>
+<p>{{filter}}</p>
 
 <div class='title'>
   <img class='img_title' src="" alt="">

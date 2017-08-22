@@ -7,30 +7,38 @@ angular
 ])
 
 var queries = []
-
+var filters = []
 function RecipesIndexControllerFunction(RecipesFactory){
-  this.recipes = RecipesFactory.query({
-    search: queries
-  })
 
   this.search = function (search) {
-    console.log(search)
     queries.push(search)
-    console.log(queries)
-    // $state.go("recipesIndex", {}, {reload:"recipesIndex"})
     this.recipes = RecipesFactory.query({
       search: queries
     })
   }
 
-  this.enterSearch = function (search, $event) {
-    if ($event.keyCode === 13) {
-      console.log($event.keyCode)
-      queries.push(search)
-      this.recipes = RecipesFactory.query({
-        search: queries
+  this.filters = function (search) {
+    console.log(search)
+    filters.push(search)
+    console.log(filters)
+  }
+
+  this.filterFunction = function (recipe) {
+    filters.every(filter => {
+      recipe.ingredients.some(ingredient => {
+        ingredient.name.includes(filter)
       })
-      $event.preventDefault()
-    }
+    })
   }
 }
+
+  // this.enterSearch = function (search, $event) {
+  //   if ($event.keyCode === 13) {
+  //     console.log($event.keyCode)
+  //     queries.push(search)
+  //     this.recipes = RecipesFactory.query({
+  //       search: queries
+  //     })
+  //     $event.preventDefault()
+  //   }
+  // }
