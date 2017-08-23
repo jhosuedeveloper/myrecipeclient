@@ -1,44 +1,43 @@
 
 <section id='head'>
   <div class='link_menu'>
-    <a id='head_link' data-ui-sref="recipesNew" style= 'text-decoration: none';> Create New Recipe</a>
+    <a id='head_link' data-ui-sref="recipesNew"> Create New Recipe</a>
+    <a id="head_link" class='search_craving' href="#search" target="_self">Search Craving</a>
+
   </div>
 </section>
+
 <div class="">
-  <h1 id='title'> My Recipe <h1>
+  <h1 id='title'> Grandma's Delicous Ideas<h1>
 </div>
-
-<form class="search" ng-submit="vm.search(search)">
-  <label for="search">Search</label>
-  <input type="text" data-ng-model="search">
-  <input type="submit" value="Submit">
-  <input type="button" value="Remove" ng-click="vm.removeAll()">
-</form>
-
-<form class="filters" ng-submit="vm.filters(filter)" ng-repeat="count in vm.inputs">
-  <label for="filter">Filter</label>
-  <input type="text" data-ng-model="filter">
-  <input type="submit" value="Submit">
-  <input type="button" value="Remove" ng-click="vm.removeFilter($index)">
-</form>
-
 
 <div class='title'>
   <img class='img_title' src="" alt="">
 </div>
 
-<section class='divide'> </section>
-<div class="results_title">
-  <h2>Recipe Results</h2>
+<div class="search">
+<form  ng-submit="vm.search(search)">
+  <label for="search">What are you craving today?</label>
+  <input type="text" data-ng-model="search">
+  <input class='submit' type="submit" value="Submit">
+  <input class='submit' type="button" value="Remove" ng-click="vm.removeAll()">
+</form>
+
+<form  ng-submit="vm.filters(filter)" ng-repeat="count in vm.inputs">
+  <label for="filter">Somethign Else?</label>
+  <input type="text" data-ng-model="filter">
+  <input class='submit' type="submit" value="Submit">
+  <input class='submit' type="button" value="Remove" ng-click="vm.removeFilter($index)">
+</form>
 </div>
 
-<section class='divide'> </section>
-<div class ='recipes' data-ng-repeat = "recipe in vm.recipes | filter : vm.filterFunction">
+<!-- <section class='divide'> </section> -->
+<div class="results_title">
+  <h2 id='search'>Craving Results</h2>
+</div>
 
+<!-- <section class='divide'> </section> -->
+<div class ='recipes' data-ng-repeat = "recipe in vm.recipes | filter : vm.filterFunction">
   <img class='image' ng-src= "{{recipe.photo_url}}" >
   <p class='recipe'> <a class='link' data-ui-sref="recipesShow({id: recipe.id})">{{ recipe.name }}</a> </p>
-</div>
-
-<div class="results">
-
 </div>

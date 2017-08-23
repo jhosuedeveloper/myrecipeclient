@@ -3,12 +3,17 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: orange;
+  background-color: white;
   font-family:'Kranky', cursive;
    }
-#head_link{
-color: white;
+/*top link menu*/
+#head_link {
+  padding-right: 15px;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
 }
+
 div.link_menu {
   background-color: rgba(0, 0, 0, 0.9);
   padding-top: 20px;
@@ -17,60 +22,62 @@ div.link_menu {
   width: 100%;
   position: fixed;
   color: black;
+  display: flex;
 }
+/*title area*/
 h1#title {
   padding-top: 40px;
   margin-top: 40px;
   margin-bottom: 10px;
   text-align: center;
   font-size: 60px;
-
 }
-div.title {
-  background-size: 100% 100%;
-  background-image:url(https://static.pexels.com/photos/33242/cooking-ingredient-cuisine-kitchen.jpg);
-  height: 750px;
-  width: 1440px;
-  background-color: black;
+/* Search Form Area*/
 
-}
-input#search {
+input {
     width: 200px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    background-color: white;
-    background-position: 10px 10px;
+    background-color: red;
     padding: 5px 20px 5px 5px;
     margin-top: 30px;
   }
   .submit {
     height: 30px;
-    width: 60px;
+    width: 80px;
     font-size: 14px;
     text-align: center;
   }
-  .search {
+  div.search {
     text-align: center;
     background-color: black;
     margin: 0;
     color: white;
-    height: 100px;
+    height: auto;
+    padding-bottom: 20px;
   }
-
     label {
       margin-left: 20px;
       font-size: 20px;
     }
+    /*main image*/
+div.title {
+  background-size: 100% 100%;
+  background-image:url(https://images.pexels.com/photos/76093/pexels-photo-76093.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
+  height: 750px;
+  width: 1440px;
+  background-color: black;
+}
 
-    .divide {
+    /*.divide {
       background-color: orange;
       height: 20px;
       width: 100%;
-    }
+    }*/
   .results_title, h2 {
-    background-color: orange;
+    background-color: white;
     padding-bottom: 5px;
     padding-top: 5px;
     font-size: 50px;
@@ -80,11 +87,6 @@ input#search {
     margin: 0;
   }
 
-  .results {
-    width:  100%;
-    background-color: orange;
-    padding-left: 20px;
-  }
   .recipes {
     display: inline-table;
     margin: auto;
@@ -94,7 +96,7 @@ input#search {
     margin-bottom: 20px;
     margin-top: 20px;
   }
-
+/*results image*/
 .image {
   margin-top: 20px;
   height: 300px;
@@ -105,6 +107,7 @@ input#search {
   background-color: white;
   box-shadow: 10px 10px 5px #888888;
 }
+/*results name*/
 .recipe {
   margin: 20px 20px 0 20px ;
   text-align: center;
