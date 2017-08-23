@@ -7,7 +7,6 @@
   <h2>New Recipe</h2>
 </div>
 
-
 <form class='form'>
   <div class="input_name">
     <input placeholder="Name" data-ng-model="vm.recipe.name" />
@@ -26,5 +25,5 @@
 <pre>
   <p class="new_name">{{vm.recipe.name | json}}</p>
   <p class="new_image"><img src="{{vm.recipe.photo_url }}" alt=""></p>
-  <textarea class="new_description" name="name" rows="8" cols="80">{{vm.recipe.description | json}}</textarea>
+  <pre class="new_description" name="name" rows="8" cols="80">{{vm.recipe.description | json}}</pre>
 </pre>
