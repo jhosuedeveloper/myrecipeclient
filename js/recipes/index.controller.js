@@ -7,37 +7,44 @@ angular
 ])
 
 function RecipesIndexControllerFunction(RecipesFactory){
-  var queries = []
-  var filters = []
-  this.inputs = []
+  var query = ''
+  this.filters = []
+  this.hideFilter = true
 
   this.search = function (search) {
-    queries.push(search)
+    query = search
     this.recipes = RecipesFactory.query({
-      search: queries
+      search: query
     })
-    this.inputs.push(search)
+    this.hideFilter = false
   }
 
-  this.removeAll = function (index) {
-    queries.splice(index, 1)
+  this.removeAll = function () {
+    query = ''
+    this.recipes = []
+    this.filters.splice(0, this.filters.length)
+    this.hideFilter = true
   }
 
   this.removeFilter = function (index) {
-    this.inputs.splice(index, 1)
-    filters.splice(index, 1)
+    this.filters.splice(index, 1)
   }
 
-  this.filters = function (search) {
-    filters.push(search)
-    this.inputs.push(search)
+  this.addFilters = function (search) {
+    if (search === undefined || search === '') {
+      return ''
+    } else {
+      this.filters.push(search)
+      search = ''
+    }
   }
 
   this.filterFunction = function (recipe) {
-    return filters.every(filter => {
+    return this.filters.every(filter => {
       return recipe.ingredients.some(ingredient => {
         return ingredient.name.includes(filter)
       })
     })
-  }
+  }.bind(this)
+
 }
