@@ -1,47 +1,71 @@
 <section id='head'>
   <div class='link_menu'>
-    <a id='head_link' data-ui-sref="recipesNew" style= 'text-decoration: none';> Create New Recipe</a>
+    <a id='head_link' data-ui-sref="recipesNew"> Create New Recipe</a>
+    <a id="head_link" class='search_craving' href="#search" target="_self">Search Craving</a>
+
   </div>
 </section>
+
 <div class="">
-  <h1 id='title'> My Recipe <h1>
+  <h1 id='title'> Grandma's Delicous Ideas<h1>
 </div>
 
+<<<<<<< HEAD
 <form class="search" data-ng-submit="vm.search(search)">
   <label for="search">Main Ingredient</label>
-  <input type="text" data-ng-model="search">
-  <input type="submit" value="Add">
-  <input type="button" value="RemoveAll" data-ng-click="vm.removeAll(); search = ''">
+  <input class='submit' type="text" data-ng-model="search">
+  <input class='submit' type="submit" value="Add">
+  <input class='submit' type="button" value="RemoveAll" data-ng-click="vm.removeAll(); search = ''">
 </form>
 
 <form class="filters" data-ng-submit="vm.addFilters(newFilter); newFilter = ''" data-ng-hide="vm.hideFilter">
   <label for="filter">Filter</label>
-  <input type="text" data-ng-model="newFilter">
-  <input type="submit" value="Add">
+  <input class='submit' type="text" data-ng-model="newFilter">
+  <input class='submit' type="submit" value="Add">
 </form>
 
 <ul>
   <li data-ng-repeat="filter in vm.filters">
     <span>{{filter}}</span>
-    <button data-ng-click="vm.removeFilter($index)">Remove</button>
+    <button class='submit' data-ng-click="vm.removeFilter($index)">Remove</button>
   </li>
 </ul>
 
 <div class='title'>
   <img class='img_title' src="" alt="">
+=======
+<div class='title'>
+  <img class='img_title' src="" alt="">
 </div>
 
-<section class='divide'> </section>
+<div class="search">
+<form  ng-submit="vm.search(search)">
+  <label for="search">What are you craving today?</label>
+  <input type="text" data-ng-model="search">
+  <input class='submit' type="submit" value="Submit">
+  <input class='submit' type="button" value="Remove" ng-click="vm.removeAll()">
+</form>
+
+<form  ng-submit="vm.filters(filter)" ng-repeat="count in vm.inputs">
+  <label for="filter">Somethign Else?</label>
+  <input type="text" data-ng-model="filter">
+  <input class='submit' type="submit" value="Submit">
+  <input class='submit' type="button" value="Remove" ng-click="vm.removeFilter($index)">
+</form>
+>>>>>>> refs/remotes/origin/master
+</div>
+
+<!-- <section class='divide'> </section> -->
 <div class="results_title">
-  <h2>Recipe Results</h2>
+  <h2 id='search'>Craving Results</h2>
 </div>
 
-<section class='divide'> </section>
+<!-- <section class='divide'> </section> -->
 <div class ='recipes' data-ng-repeat = "recipe in vm.recipes | filter : vm.filterFunction">
+<<<<<<< HEAD
   <img class='image' data-ng-src= "{{recipe.photo_url}}" >
+=======
+  <img class='image' ng-src= "{{recipe.photo_url}}" >
+>>>>>>> refs/remotes/origin/master
   <p class='recipe'> <a class='link' data-ui-sref="recipesShow({id: recipe.id})">{{ recipe.name }}</a> </p>
-</div>
-
-<div class="results">
-
 </div>
