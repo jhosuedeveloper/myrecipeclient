@@ -12,7 +12,7 @@ function RecipesNewControllerFunction($state, RecipesFactory){
   this.recipe= new RecipesFactory()
   this.create = function () {
     this.recipe.$save(() => {
-      $state.go('recipesIndex')
+      $state.go('recipesShow')
     })
   }
 }

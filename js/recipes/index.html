@@ -1,6 +1,6 @@
 <section id='head'>
   <div class='link_menu'>
-    <a id='head_link' data-ui-sref="recipesNew"> Create New Recipe</a>
+    <a id='head_link' data-ui-sref="recipesNew" href="#/recipes/new#new_title"> Create New Recipe</a>
     <a id="head_link" class='search_craving' href="#search" target="_self">Search Craving</a>
 
   </div>
@@ -10,6 +10,11 @@
   <h1 id='title'> What's for Dinner? <h1>
 </div>
 
+<div class='title'>
+  <img class='img_title' src="" alt="">
+</div>
+
+<div class="search">
 <form class="search" data-ng-submit="vm.search(search)">
   <label for="search">Main Ingredient</label>
   <input class='submit' type="text" data-ng-model="search">
@@ -22,17 +27,14 @@
   <input class='submit' type="text" data-ng-model="newFilter">
   <input class='submit' type="submit" value="Add">
 </form>
+</div>
 
-<ul>
+<ul id='filters'>
   <li data-ng-repeat="filter in vm.filters">
-    <span>{{filter}}</span>
-    <button class='submit' data-ng-click="vm.removeFilter($index)">Remove</button>
+    <span data-ng-click="vm.removeFilter($index)">{{filter}}</span>
+    <button class='xFilter' data-ng-click="vm.removeFilter($index)">x</button>
   </li>
 </ul>
-
-<div class='title'>
-  <img class='img_title' src="" alt="">
-</div>
 
 <!-- <section class='divide'> </section> -->
 <div class="results_title">

@@ -3,7 +3,7 @@
 <a id='head_link' data-ui-sref="recipesIndex" style= 'text-decoration: none';> Recipes</a>
 </div>
 </section>
-<div clas='new_title'>
+<div id='new_title' clas='new_title'>
   <h2>New Recipe</h2>
 </div>
 
@@ -15,15 +15,20 @@
     <input placeholder="Photo URL" data-ng-model="vm.recipe.photo_url" /><br>
   </div>
   <div class="input_description">
-    <textarea id='test' rows="8" cols="80" form="usrform" placeholder="Description" data-ng-model="vm.recipe.description"></textarea><br>
+    <textarea id='test' rows="8" cols="80" form="usrform" placeholder="Instructions" data-ng-model="vm.recipe.description"></textarea><br>
+  </div>
+  <div class="input_ingredient">
+    <textarea id='test' rows="8" cols="80" form="usrform" placeholder="Ingredients" data-ng-model="vm.recipe.ingredients"></textarea><br>
   </div>
   <div class="input_button">
     <button type="button" data-ng-click="vm.create()">Create</button>
   </div>
 </form>
 
-<pre>
+
   <p class="new_name">{{vm.recipe.name | json}}</p>
   <p class="new_image"><img src="{{vm.recipe.photo_url }}" alt=""></p>
-  <pre class="new_description" name="name" rows="8" cols="80">{{vm.recipe.description | json}}</pre>
-</pre>
+<h3>Instructions</h3>
+  <textarea class="new_instruction" name="name" rows="8" cols="20">{{vm.recipe.description | json}}</textarea>
+<h3>Ingredients</h3>
+<textarea class="new_ingredient" name="name" rows="8" cols="20">{{vm.recipe.ingredients | json}}</textarea>
